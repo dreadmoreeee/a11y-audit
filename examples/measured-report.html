@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accessibility audit</title>
+<style>
+body{font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;margin:0;color:#1b1b1b;background:#f6f6f4}
+main{max-width:1100px;margin:0 auto;padding:24px}
+h1{margin:0 0 4px}h2{margin-top:40px;border-bottom:2px solid #ddd;padding-bottom:4px;word-break:break-all}
+table{border-collapse:collapse;width:100%;background:#fff;margin:12px 0}
+th,td{border:1px solid #ccc;padding:6px 8px;text-align:left;vertical-align:top}
+td.n{text-align:right}
+.badge{display:inline-block;border-radius:4px;padding:1px 8px;font-weight:700;font-size:13px;color:#fff}
+.critical{background:#8b0000}.serious{background:#b3261e}.moderate{background:#8a5300}.minor{background:#3d5a80}
+details{background:#fff;border:1px solid #ccc;border-radius:6px;margin:8px 0;padding:8px 12px}
+summary{cursor:pointer}
+code{background:#eee;padding:1px 4px;border-radius:3px;word-break:break-all}
+.muted{color:#555}.fail{color:#b3261e;font-weight:700}.pass{color:#1e6b2e;font-weight:700}
+a{color:#0b57d0}
+a:focus-visible,summary:focus-visible{outline:3px solid #0b57d0;outline-offset:2px}
+</style>
+</head>
+<body>
+<main>
+<h1>Accessibility audit</h1>
+<p class="muted">a11y-audit 1.0.0, axe-core 4.13.0, viewport 1280x800, reduced motion emulated, text zoom 200%. Generated 2026-09-29T08:45:22+00:00.</p>
+<p class="fail">fail-on serious: FAILED</p>
+<table><caption class="muted">Rules violated per page (elements in parentheses)</caption>
+<tr><th scope="col">Page</th><th scope="col">Status</th><th scope="col">Critical</th><th scope="col">Serious</th><th scope="col">Moderate</th><th scope="col">Minor</th></tr>
+<tr><td><a href="#page-0">https://demarkstudio.ca</a></td><td>200</td><td class="n">0 (0)</td><td class="n">2 (11)</td><td class="n">0 (0)</td><td class="n">0 (0)</td></tr>
+<tr><td><a href="#page-1">https://demo.demarkstudio.ca</a></td><td>200</td><td class="n">0 (0)</td><td class="n">0 (0)</td><td class="n">0 (0)</td><td class="n">0 (0)</td></tr>
+<tr><td><a href="#page-2">https://demo.demarkstudio.ca/riverside-pub/site</a></td><td>200</td><td class="n">0 (0)</td><td class="n">0 (0)</td><td class="n">1 (1)</td><td class="n">0 (0)</td></tr>
+<tr><td><a href="#page-3">https://marvin.demarkstudio.ca</a></td><td>200</td><td class="n">0 (0)</td><td class="n">0 (0)</td><td class="n">0 (0)</td><td class="n">0 (0)</td></tr>
+</table>
+<section aria-labelledby="page-0"><h2 id="page-0">https://demarkstudio.ca</h2>
+<p class="muted">Title: DeMark — Websites, online booking and invoicing for small businesses across Canada<br>axe passes: 41, needs review: 1<br>Keyboard sample: 30 Tab stops, 30 distinct elements, 85 tabbable on page</p>
+<h3>By WCAG criterion</h3><table><tr><th scope="col">Criterion</th><th scope="col">Rules</th><th scope="col">Elements</th></tr>
+<tr><td>1.4.4 Resize Text</td><td>text-zoom-overflow</td><td class="n">1</td></tr>
+<tr><td>1.4.10 Reflow</td><td>text-zoom-overflow</td><td class="n">1</td></tr>
+<tr><td>2.4.7 Focus Visible</td><td>focus-offscreen</td><td class="n">10</td></tr>
+<tr><td>2.4.11 Focus Not Obscured (Minimum)</td><td>focus-offscreen</td><td class="n">10</td></tr>
+</table>
+<h3>Violations by impact</h3>
+<details><summary><span class="badge serious">serious</span> <strong>focus-offscreen</strong> <span class="muted">WCAG 2.4.7, 2.4.11, 10 elements, a11y-audit</span> Focused element is off-screen or has zero size</summary>
+<p><strong>Fix:</strong> Bring focused items into view (scroll carousels to the focused slide, show skip links on :focus) or make hidden ones inert.
+ <a href="https://www.w3.org/WAI/WCAG22/quickref/">Reference</a>
+</p><ul>
+<li><code>#herramientas &gt; div &gt; div:nth-of-type(2) &gt; ul</code> <span class="muted">off screen (Tab stop 18)</span></li>
+<li><code>#herramientas &gt; div &gt; div:nth-of-type(2) &gt; ul &gt; li:nth-of-type(1) &gt; article &gt; a</code> <span class="muted">off screen (Tab stop 19)</span></li>
+<li><code>#herramientas &gt; div &gt; div:nth-of-type(2) &gt; ul &gt; li:nth-of-type(2) &gt; article &gt; a</code> <span class="muted">off screen (Tab stop 20)</span></li>
+<li><code>#herramientas &gt; div &gt; div:nth-of-type(2) &gt; ul &gt; li:nth-of-type(3) &gt; article &gt; a</code> <span class="muted">off screen (Tab stop 21)</span></li>
+<li><code>#herramientas &gt; div &gt; div:nth-of-type(2) &gt; ul &gt; li:nth-of-type(4) &gt; article &gt; a</code> <span class="muted">off screen (Tab stop 22)</span></li>
+<li><code>#herramientas &gt; div &gt; div:nth-of-type(2) &gt; ul &gt; li:nth-of-type(5) &gt; article &gt; a</code> <span class="muted">off screen (Tab stop 23)</span></li>
+<li><code>#herramientas &gt; div &gt; div:nth-of-type(2) &gt; ul &gt; li:nth-of-type(6) &gt; article &gt; a</code> <span class="muted">off screen (Tab stop 24)</span></li>
+<li><code>#herramientas &gt; div &gt; div:nth-of-type(2) &gt; ul &gt; li:nth-of-type(7) &gt; article &gt; a</code> <span class="muted">off screen (Tab stop 25)</span></li>
+<li><code>#herramientas &gt; div &gt; div:nth-of-type(2) &gt; ul &gt; li:nth-of-type(8) &gt; article &gt; a</code> <span class="muted">off screen (Tab stop 26)</span></li>
+<li><code>#herramientas &gt; div &gt; div:nth-of-type(2) &gt; ul &gt; li:nth-of-type(9) &gt; article &gt; a</code> <span class="muted">off screen (Tab stop 27)</span></li>
+</ul></details>
+<details><summary><span class="badge serious">serious</span> <strong>text-zoom-overflow</strong> <span class="muted">WCAG 1.4.4, 1.4.10, 1 element, a11y-audit</span> Page scrolls horizontally with text at 200%</summary>
+<p><strong>Fix:</strong> Use relative widths (%, rem, max-width) and allow long words to wrap (overflow-wrap:anywhere).
+ <a href="https://www.w3.org/WAI/WCAG22/quickref/">Reference</a>
+</p><ul>
+<li><code>#nav</code> <span class="muted">right edge at 1671 px, viewport 1280 px</span></li>
+</ul></details>
+<details><summary>Keyboard focus order sample</summary><table><tr><th scope="col">#</th><th scope="col">Element</th><th scope="col">Text</th><th scope="col">Flags</th></tr>
+<tr><td class="n">1</td><td><code>body &gt; a</code></td><td>Skip to content</td><td></td></tr>
+<tr><td class="n">2</td><td><code>body &gt; header &gt; div &gt; a</code></td><td>DeMark</td><td></td></tr>
+<tr><td class="n">3</td><td><code>#nav &gt; a:nth-of-type(1)</code></td><td>PRODUCT</td><td></td></tr>
+<tr><td class="n">4</td><td><code>#nav &gt; a:nth-of-type(2)</code></td><td>PRICING</td><td></td></tr>
+<tr><td class="n">5</td><td><code>#nav &gt; a:nth-of-type(3)</code></td><td>FOR YOUR BUSINESS</td><td></td></tr>
+<tr><td class="n">6</td><td><code>#nav &gt; a:nth-of-type(4)</code></td><td>COMPARE</td><td></td></tr>
+<tr><td class="n">7</td><td><code>#nav &gt; a:nth-of-type(5)</code></td><td>ABOUT</td><td></td></tr>
+<tr><td class="n">8</td><td><code>#nav &gt; a:nth-of-type(6)</code></td><td>LOG IN</td><td></td></tr>
+<tr><td class="n">9</td><td><code>#nav &gt; a:nth-of-type(7)</code></td><td>START FREE</td><td></td></tr>
+<tr><td class="n">10</td><td><code>#contenido &gt; div &gt; section:nth-of-type(1) &gt; div &gt; div:nth-of-type(1) &gt; div &gt; a:nth-of-type(1)</code></td><td>START FREE FOR 7 DAYS</td><td></td></tr>
+<tr><td class="n">11</td><td><code>#contenido &gt; div &gt; section:nth-of-type(1) &gt; div &gt; div:nth-of-type(1) &gt; div &gt; a:nth-of-type(2)</code></td><td>SEE THE DEMO</td><td></td></tr>
+<tr><td class="n">12</td><td><code>#contenido &gt; div &gt; section:nth-of-type(1) &gt; div &gt; div:nth-of-type(2) &gt; a</code></td><td></td><td></td></tr>
+<tr><td class="n">13</td><td><code>#dia &gt; div &gt; ol &gt; li:nth-of-type(1) &gt; div:nth-of-type(2) &gt; a</code></td><td></td><td></td></tr>
+<tr><td class="n">14</td><td><code>#dia &gt; div &gt; ol &gt; li:nth-of-type(2) &gt; div:nth-of-type(2) &gt; a</code></td><td></td><td></td></tr>
+<tr><td class="n">15</td><td><code>#dia &gt; div &gt; ol &gt; li:nth-of-type(3) &gt; div:nth-of-type(2) &gt; a</code></td><td></td><td></td></tr>
+<tr><td class="n">16</td><td><code>#herramientas &gt; div &gt; div:nth-of-type(2) &gt; button:nth-of-type(1)</code></td><td>Previous</td><td></td></tr>
+<tr><td class="n">17</td><td><code>#herramientas &gt; div &gt; div:nth-of-type(2) &gt; button:nth-of-type(2)</code></td><td>Next</td><td></td></tr>
+<tr><td class="n">18</td><td><code>#herramientas &gt; div &gt; div:nth-of-type(2) &gt; ul</code></td><td>Examples of our work</td><td>off-screen</td></tr>
+<tr><td class="n">19</td><td><code>#herramientas &gt; div &gt; div:nth-of-type(2) &gt; ul &gt; li:nth-of-type(1) &gt; article &gt; a</code></td><td></td><td>off-screen</td></tr>
+<tr><td class="n">20</td><td><code>#herramientas &gt; div &gt; div:nth-of-type(2) &gt; ul &gt; li:nth-of-type(2) &gt; article &gt; a</code></td><td></td><td>off-screen</td></tr>
+<tr><td class="n">21</td><td><code>#herramientas &gt; div &gt; div:nth-of-type(2) &gt; ul &gt; li:nth-of-type(3) &gt; article &gt; a</code></td><td></td><td>off-screen</td></tr>
+<tr><td class="n">22</td><td><code>#herramientas &gt; div &gt; div:nth-of-type(2) &gt; ul &gt; li:nth-of-type(4) &gt; article &gt; a</code></td><td></td><td>off-screen</td></tr>
+<tr><td class="n">23</td><td><code>#herramientas &gt; div &gt; div:nth-of-type(2) &gt; ul &gt; li:nth-of-type(5) &gt; article &gt; a</code></td><td></td><td>off-screen</td></tr>
+<tr><td class="n">24</td><td><code>#herramientas &gt; div &gt; div:nth-of-type(2) &gt; ul &gt; li:nth-of-type(6) &gt; article &gt; a</code></td><td></td><td>off-screen</td></tr>
+<tr><td class="n">25</td><td><code>#herramientas &gt; div &gt; div:nth-of-type(2) &gt; ul &gt; li:nth-of-type(7) &gt; article &gt; a</code></td><td></td><td>off-screen</td></tr>
+<tr><td class="n">26</td><td><code>#herramientas &gt; div &gt; div:nth-of-type(2) &gt; ul &gt; li:nth-of-type(8) &gt; article &gt; a</code></td><td></td><td>off-screen</td></tr>
+<tr><td class="n">27</td><td><code>#herramientas &gt; div &gt; div:nth-of-type(2) &gt; ul &gt; li:nth-of-type(9) &gt; article &gt; a</code></td><td></td><td>off-screen</td></tr>
+<tr><td class="n">28</td><td><code>#herramientas &gt; div &gt; div:nth-of-type(2) &gt; ul &gt; li:nth-of-type(10) &gt; article &gt; a</code></td><td></td><td></td></tr>
+<tr><td class="n">29</td><td><code>#portada-galeria &gt; fieldset &gt; div &gt; label:nth-of-type(2) &gt; input</code></td><td>general</td><td></td></tr>
+<tr><td class="n">30</td><td><code>#portada-general &gt; ul &gt; li:nth-of-type(1) &gt; a:nth-of-type(1)</code></td><td></td><td></td></tr>
+</table></details>
+</section>
+<section aria-labelledby="page-1"><h2 id="page-1">https://demo.demarkstudio.ca</h2>
+<p class="muted">Title: Sign in — DeMark<br>axe passes: 29, needs review: 0<br>Keyboard sample: 9 Tab stops, 9 distinct elements, 9 tabbable on page</p>
+<p class="pass">No violations found.</p>
+<details><summary>Keyboard focus order sample</summary><table><tr><th scope="col">#</th><th scope="col">Element</th><th scope="col">Text</th><th scope="col">Flags</th></tr>
+<tr><td class="n">1</td><td><code>body &gt; main &gt; a</code></td><td>De Mark</td><td></td></tr>
+<tr><td class="n">2</td><td><code>body &gt; main &gt; div:nth-of-type(2) &gt; form:nth-of-type(1) &gt; button</code></td><td>Enter as Salon Ana</td><td></td></tr>
+<tr><td class="n">3</td><td><code>body &gt; main &gt; div:nth-of-type(2) &gt; form:nth-of-type(1) &gt; p &gt; a:nth-of-type(1)</code></td><td>the public booking page</td><td></td></tr>
+<tr><td class="n">4</td><td><code>body &gt; main &gt; div:nth-of-type(2) &gt; form:nth-of-type(1) &gt; p &gt; a:nth-of-type(2)</code></td><td>the client portal</td><td></td></tr>
+<tr><td class="n">5</td><td><code>#email</code></td><td>negocio@demo.test</td><td></td></tr>
+<tr><td class="n">6</td><td><code>#clave</code></td><td>demo demo demo</td><td></td></tr>
+<tr><td class="n">7</td><td><code>body &gt; main &gt; div:nth-of-type(2) &gt; form:nth-of-type(2) &gt; div:nth-of-type(3) &gt; button</code></td><td>Sign in</td><td></td></tr>
+<tr><td class="n">8</td><td><code>body &gt; main &gt; div:nth-of-type(2) &gt; form:nth-of-type(2) &gt; p &gt; a</code></td><td>Forgot your password?</td><td></td></tr>
+<tr><td class="n">9</td><td><code>body &gt; main &gt; div:nth-of-type(2) &gt; p:nth-of-type(2) &gt; a</code></td><td>Start free</td><td></td></tr>
+<tr><td class="n">10</td><td><code>(document)</code></td><td></td><td></td></tr>
+</table></details>
+</section>
+<section aria-labelledby="page-2"><h2 id="page-2">https://demo.demarkstudio.ca/riverside-pub/site</h2>
+<p class="muted">Title: Riverside Pub &amp; Coasters Lounge — Good food, cold drinks, live music<br>axe passes: 32, needs review: 1<br>Keyboard sample: 30 Tab stops, 30 distinct elements, 40 tabbable on page</p>
+<h3>By WCAG criterion</h3><table><tr><th scope="col">Criterion</th><th scope="col">Rules</th><th scope="col">Elements</th></tr>
+<tr><td>Best practice (no WCAG criterion)</td><td>region</td><td class="n">1</td></tr>
+</table>
+<h3>Violations by impact</h3>
+<details><summary><span class="badge moderate">moderate</span> <strong>region</strong> <span class="muted">WCAG best practice, 1 element, axe</span> All page content should be contained by landmarks</summary>
+<p><strong>Fix:</strong> Place all content inside landmarks (header, nav, main, footer).
+ <a href="https://dequeuniversity.com/rules/axe/4.13/region?application=axeAPI">Reference</a>
+</p><ul>
+<li><code>#anuncio</code> <span class="muted">Some page content is not contained by landmarks</span></li>
+</ul></details>
+<details><summary>Keyboard focus order sample</summary><table><tr><th scope="col">#</th><th scope="col">Element</th><th scope="col">Text</th><th scope="col">Flags</th></tr>
+<tr><td class="n">1</td><td><code>body &gt; a</code></td><td>Skip to content</td><td></td></tr>
+<tr><td class="n">2</td><td><code>body &gt; div:nth-of-type(1) &gt; header &gt; div &gt; a</code></td><td>Riverside Pub &amp; Coasters Lounge</td><td></td></tr>
+<tr><td class="n">3</td><td><code>body &gt; div:nth-of-type(1) &gt; header &gt; div &gt; nav &gt; a:nth-of-type(1)</code></td><td>Home</td><td></td></tr>
+<tr><td class="n">4</td><td><code>body &gt; div:nth-of-type(1) &gt; header &gt; div &gt; nav &gt; a:nth-of-type(2)</code></td><td>Services</td><td></td></tr>
+<tr><td class="n">5</td><td><code>body &gt; div:nth-of-type(1) &gt; header &gt; div &gt; nav &gt; a:nth-of-type(3)</code></td><td>Gallery</td><td></td></tr>
+<tr><td class="n">6</td><td><code>body &gt; div:nth-of-type(1) &gt; header &gt; div &gt; nav &gt; a:nth-of-type(4)</code></td><td>About</td><td></td></tr>
+<tr><td class="n">7</td><td><code>body &gt; div:nth-of-type(1) &gt; header &gt; div &gt; nav &gt; a:nth-of-type(5)</code></td><td>Contact</td><td></td></tr>
+<tr><td class="n">8</td><td><code>body &gt; div:nth-of-type(1) &gt; header &gt; div &gt; nav &gt; a:nth-of-type(6)</code></td><td>Menu</td><td></td></tr>
+<tr><td class="n">9</td><td><code>body &gt; div:nth-of-type(1) &gt; header &gt; div &gt; nav &gt; a:nth-of-type(7)</code></td><td>Events</td><td></td></tr>
+<tr><td class="n">10</td><td><code>body &gt; div:nth-of-type(1) &gt; header &gt; div &gt; div &gt; a:nth-of-type(1)</code></td><td>FR</td><td></td></tr>
+<tr><td class="n">11</td><td><code>body &gt; div:nth-of-type(1) &gt; header &gt; div &gt; div &gt; a:nth-of-type(2)</code></td><td>Book a table</td><td></td></tr>
+<tr><td class="n">12</td><td><code>#hero &gt; div &gt; div &gt; p:nth-of-type(2) &gt; a:nth-of-type(1)</code></td><td>Book a table</td><td></td></tr>
+<tr><td class="n">13</td><td><code>#hero &gt; div &gt; div &gt; p:nth-of-type(2) &gt; a:nth-of-type(2)</code></td><td>See the gallery</td><td></td></tr>
+<tr><td class="n">14</td><td><code>#hero &gt; p &gt; a</code></td><td>(506) ***-**** (masked)</td><td></td></tr>
+<tr><td class="n">15</td><td><code>#sobre &gt; div &gt; div:nth-of-type(2) &gt; a</code></td><td>More about us →</td><td></td></tr>
+<tr><td class="n">16</td><td><code>#galeria &gt; div &gt; div:nth-of-type(1) &gt; a</code></td><td>See the gallery →</td><td></td></tr>
+<tr><td class="n">17</td><td><code>#galeria &gt; div &gt; div:nth-of-type(2) &gt; a:nth-of-type(1)</code></td><td></td><td></td></tr>
+<tr><td class="n">18</td><td><code>#galeria &gt; div &gt; div:nth-of-type(2) &gt; a:nth-of-type(2)</code></td><td></td><td></td></tr>
+<tr><td class="n">19</td><td><code>#galeria &gt; div &gt; div:nth-of-type(2) &gt; a:nth-of-type(3)</code></td><td></td><td></td></tr>
+<tr><td class="n">20</td><td><code>#galeria &gt; div &gt; div:nth-of-type(2) &gt; a:nth-of-type(4)</code></td><td></td><td></td></tr>
+<tr><td class="n">21</td><td><code>#galeria &gt; div &gt; div:nth-of-type(2) &gt; a:nth-of-type(5)</code></td><td></td><td></td></tr>
+<tr><td class="n">22</td><td><code>#contacto &gt; div &gt; div &gt; div:nth-of-type(1) &gt; a</code></td><td>Open in Maps ↗</td><td></td></tr>
+<tr><td class="n">23</td><td><code>#contacto &gt; div &gt; div &gt; div:nth-of-type(3) &gt; p:nth-of-type(2) &gt; a</code></td><td>(506) ***-**** (masked)</td><td></td></tr>
+<tr><td class="n">24</td><td><code>#contacto &gt; div &gt; div &gt; div:nth-of-type(3) &gt; p:nth-of-type(3) &gt; a</code></td><td>riverside-pub-negocio@example.test</td><td></td></tr>
+<tr><td class="n">25</td><td><code>#contacto &gt; div &gt; p &gt; a:nth-of-type(1)</code></td><td>Book a table</td><td></td></tr>
+<tr><td class="n">26</td><td><code>#contacto &gt; div &gt; p &gt; a:nth-of-type(2)</code></td><td>Get in touch</td><td></td></tr>
+<tr><td class="n">27</td><td><code>body &gt; footer &gt; div &gt; div:nth-of-type(1) &gt; p:nth-of-type(2) &gt; a:nth-of-type(1)</code></td><td>Book a table</td><td></td></tr>
+<tr><td class="n">28</td><td><code>body &gt; footer &gt; div &gt; div:nth-of-type(1) &gt; p:nth-of-type(2) &gt; a:nth-of-type(2)</code></td><td>(506) ***-**** (masked)</td><td></td></tr>
+<tr><td class="n">29</td><td><code>body &gt; footer &gt; div &gt; div:nth-of-type(2) &gt; div:nth-of-type(1) &gt; p:nth-of-type(3) &gt; a</code></td><td>Open in Maps ↗</td><td></td></tr>
+<tr><td class="n">30</td><td><code>body &gt; footer &gt; div &gt; div:nth-of-type(2) &gt; div:nth-of-type(3) &gt; p:nth-of-type(2) &gt; a</code></td><td>(506) ***-**** (masked)</td><td></td></tr>
+</table></details>
+</section>
+<section aria-labelledby="page-3"><h2 id="page-3">https://marvin.demarkstudio.ca</h2>
+<p class="muted">Title: Marvin Palencia — Python &amp; Web Developer | Stripe, FastAPI, Websites<br>axe passes: 36, needs review: 0<br>Keyboard sample: 30 Tab stops, 30 distinct elements, 46 tabbable on page</p>
+<p class="pass">No violations found.</p>
+<details><summary>Keyboard focus order sample</summary><table><tr><th scope="col">#</th><th scope="col">Element</th><th scope="col">Text</th><th scope="col">Flags</th></tr>
+<tr><td class="n">1</td><td><code>body &gt; a</code></td><td>Skip to content</td><td></td></tr>
+<tr><td class="n">2</td><td><code>body &gt; header &gt; a</code></td><td>Marvin Palencia</td><td></td></tr>
+<tr><td class="n">3</td><td><code>body &gt; header &gt; nav &gt; a:nth-of-type(1)</code></td><td>Work</td><td></td></tr>
+<tr><td class="n">4</td><td><code>body &gt; header &gt; nav &gt; a:nth-of-type(2)</code></td><td>Open source</td><td></td></tr>
+<tr><td class="n">5</td><td><code>body &gt; header &gt; nav &gt; a:nth-of-type(3)</code></td><td>Services</td><td></td></tr>
+<tr><td class="n">6</td><td><code>body &gt; header &gt; nav &gt; a:nth-of-type(4)</code></td><td>About</td><td></td></tr>
+<tr><td class="n">7</td><td><code>body &gt; header &gt; nav &gt; a:nth-of-type(5)</code></td><td>Contact</td><td></td></tr>
+<tr><td class="n">8</td><td><code>body &gt; header &gt; nav &gt; a:nth-of-type(6)</code></td><td>Español</td><td></td></tr>
+<tr><td class="n">9</td><td><code>#main &gt; section:nth-of-type(1) &gt; div &gt; p:nth-of-type(3) &gt; a:nth-of-type(1)</code></td><td>Hire me on Upwork</td><td></td></tr>
+<tr><td class="n">10</td><td><code>#main &gt; section:nth-of-type(1) &gt; div &gt; p:nth-of-type(3) &gt; a:nth-of-type(2)</code></td><td>Email me</td><td></td></tr>
+<tr><td class="n">11</td><td><code>#work &gt; div &gt; article:nth-of-type(1) &gt; div &gt; p:nth-of-type(3) &gt; a:nth-of-type(1)</code></td><td>Live site ↗</td><td></td></tr>
+<tr><td class="n">12</td><td><code>#work &gt; div &gt; article:nth-of-type(1) &gt; div &gt; p:nth-of-type(3) &gt; a:nth-of-type(2)</code></td><td>Demo ↗</td><td></td></tr>
+<tr><td class="n">13</td><td><code>#work &gt; div &gt; article:nth-of-type(2) &gt; div &gt; p:nth-of-type(3) &gt; a</code></td><td>Live site ↗</td><td></td></tr>
+<tr><td class="n">14</td><td><code>#work &gt; div &gt; article:nth-of-type(3) &gt; div &gt; p:nth-of-type(3) &gt; a</code></td><td>Demo ↗</td><td></td></tr>
+<tr><td class="n">15</td><td><code>#work &gt; div &gt; article:nth-of-type(4) &gt; div &gt; p:nth-of-type(3) &gt; a</code></td><td>Demo ↗</td><td></td></tr>
+<tr><td class="n">16</td><td><code>#cases &gt; ul &gt; li:nth-of-type(1) &gt; a</code></td><td>DeMark Studio: a small-business platform built and run by on</td><td></td></tr>
+<tr><td class="n">17</td><td><code>#cases &gt; ul &gt; li:nth-of-type(2) &gt; a</code></td><td>Triple A Woodworks: a bilingual online store with Stripe che</td><td></td></tr>
+<tr><td class="n">18</td><td><code>#cases &gt; ul &gt; li:nth-of-type(3) &gt; a</code></td><td>Stopping a spam bot that beat the honeypot and rotated IPs</td><td></td></tr>
+<tr><td class="n">19</td><td><code>#open-source &gt; ul &gt; li:nth-of-type(1) &gt; a</code></td><td>sitemap-diff Python · stdlib · 73 tests</td><td></td></tr>
+<tr><td class="n">20</td><td><code>#open-source &gt; ul &gt; li:nth-of-type(2) &gt; a</code></td><td>security-headers-audit Python · TLS · 57 tests</td><td></td></tr>
+<tr><td class="n">21</td><td><code>#open-source &gt; ul &gt; li:nth-of-type(3) &gt; a</code></td><td>email-dns-check Python · DNS · 74 tests</td><td></td></tr>
+<tr><td class="n">22</td><td><code>#open-source &gt; ul &gt; li:nth-of-type(4) &gt; a</code></td><td>local-business-schema Python · JSON-LD · 62 tests</td><td></td></tr>
+<tr><td class="n">23</td><td><code>#open-source &gt; ul &gt; li:nth-of-type(5) &gt; a</code></td><td>domain-ssl-watch Python · RDAP · TLS · 84 tests</td><td></td></tr>
+<tr><td class="n">24</td><td><code>#open-source &gt; ul &gt; li:nth-of-type(6) &gt; a</code></td><td>form-spam-guard Python · FastAPI · Flask · 90 tests</td><td></td></tr>
+<tr><td class="n">25</td><td><code>#open-source &gt; ul &gt; li:nth-of-type(7) &gt; a</code></td><td>robots9309 Python · stdlib · 15 tests</td><td></td></tr>
+<tr><td class="n">26</td><td><code>#open-source &gt; ul &gt; li:nth-of-type(8) &gt; a</code></td><td>consent-tracker-scan Python · Playwright · 118 tests</td><td></td></tr>
+<tr><td class="n">27</td><td><code>#open-source &gt; ul &gt; li:nth-of-type(9) &gt; a</code></td><td>webhook-inspector Python · FastAPI · SQLite · 60 tests</td><td></td></tr>
+<tr><td class="n">28</td><td><code>#open-source &gt; ul &gt; li:nth-of-type(10) &gt; a</code></td><td>site-seo-crawler Python · stdlib · 51 tests</td><td></td></tr>
+<tr><td class="n">29</td><td><code>#open-source &gt; ul &gt; li:nth-of-type(11) &gt; a</code></td><td>api-diff Python · OpenAPI · 50 tests</td><td></td></tr>
+<tr><td class="n">30</td><td><code>#open-source &gt; ul &gt; li:nth-of-type(12) &gt; a</code></td><td>openapi-client-gen Python · httpx · 106 tests</td><td></td></tr>
+</table></details>
+</section>
+<p class="muted">Automated checks find only part of all accessibility issues; review results manually. axe-core is licensed under MPL-2.0.</p>
+</main>
+</body>
+</html>

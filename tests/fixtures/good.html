@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accessible fixture</title>
+<style>
+  body { font-family: sans-serif; max-width: 40rem; margin: 0 auto; padding: 1rem; color: #111; background: #fff; }
+  a { color: #0645ad; }
+  a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid #000; outline-offset: 2px; }
+  .skip { position: absolute; left: -10000px; }
+  .skip:focus { position: static; }
+  @media (prefers-reduced-motion: no-preference) {
+    .spin { animation: spin 2s linear infinite; }
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  input:focus-visible + span { outline: 3px solid #000; }
+  .late { position: absolute; left: -9999px; top: 0; }
+  .track-wrap { overflow: hidden; width: 20rem; }
+  .track { display: flex; width: 3000px; }
+  .track p { width: 280px; flex: none; margin: 0 10px 0 0; }
+</style>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header>
+  <nav aria-label="Main">
+    <ul>
+      <li><a href="#one">One</a></li>
+      <li><a href="#two">Two</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="content">
+  <h1>Accessible page</h1>
+  <p>This page is used as a clean baseline for the tests.</p>
+  <p><img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="Small dot" width="10" height="10"></p>
+  <p class="spin">Spinner only animates when motion is allowed.</p>
+  <form action="#" onsubmit="return false">
+    <label for="email">Email</label>
+    <input id="email" type="email" autocomplete="email">
+    <button type="submit">Send</button>
+  </form>
+  <fieldset>
+    <legend>View</legend>
+    <label><input type="radio" class="sr-only" name="view" checked><span>General</span></label>
+  </fieldset>
+  <p><a class="late" href="#late" id="late">Revealed shortly after focus</a></p>
+  <div class="track-wrap"><div class="track">
+    <p>Slide one text</p><p>Slide two text</p><p>Slide three text</p><p>Slide four text</p>
+  </div></div>
+</main>
+<script>
+  var late = document.getElementById('late');
+  late.addEventListener('focus', function () { setTimeout(function () { late.style.left = '10px'; }, 300); });
+  late.addEventListener('blur', function () { late.style.left = ''; });
+</script>
+<footer><p>Footer text.</p></footer>
+</body>
+</html>

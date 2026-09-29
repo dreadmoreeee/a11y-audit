@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "a11y-audit"
+version = "1.0.0"
+description = "Accessibility audit of web pages in headless Chromium: axe-core plus keyboard focus, 200% text zoom and reduced-motion checks, with JSON/Markdown/HTML reports."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Marvin Palencia" }]
+keywords = ["accessibility", "a11y", "wcag", "axe-core", "playwright", "audit", "ci"]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development :: Quality Assurance",
+    "Topic :: Internet :: WWW/HTTP :: Site Management",
+]
+dependencies = ["playwright>=1.40"]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[project.urls]
+Homepage = "https://github.com/dreadmoreeee/a11y-audit"
+
+[project.scripts]
+a11y-audit = "a11y_audit.cli:main"
+
+[tool.setuptools]
+packages = ["a11y_audit"]
+
+[tool.setuptools.package-data]
+a11y_audit = ["vendor/axe.min.js", "vendor/axe-core-LICENSE.txt"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

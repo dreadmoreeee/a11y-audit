@@ -1,0 +1,22 @@
+# Example CI job: fail the build on serious or critical accessibility violations.
+name: a11y
+on: [push, pull_request]
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install ./a11y-audit && python -m playwright install --with-deps chromium
+      # Start your site locally first (for example a static build served on port 4173).
+      - run: python -m http.server 4173 --directory dist &
+      - run: >
+          a11y-audit http://127.0.0.1:4173/ http://127.0.0.1:4173/contact/
+          --fail-on serious --html a11y-report.html --json a11y-report.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: a11y-report
+          path: a11y-report.*

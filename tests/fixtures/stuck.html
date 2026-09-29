@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Stuck focus fixture</title></head>
+<body>
+<main>
+<h1>Stuck</h1>
+<label for="q">Search</label>
+<input id="q" type="search">
+<a href="#after">After</a>
+</main>
+<script>
+  document.getElementById('q').addEventListener('keydown', function (e) {
+    if (e.key === 'Tab') e.preventDefault();
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Focus trap fixture</title></head>
+<body>
+<main>
+<h1>Trap</h1>
+<button type="button" id="a">A</button>
+<div role="group" aria-label="Widget">
+  <button type="button" id="b">B</button>
+  <button type="button" id="c">C</button>
+</div>
+<a href="#d">D</a>
+<a href="#e">E</a>
+</main>
+<script>
+  var b = document.getElementById('b'), c = document.getElementById('c');
+  c.addEventListener('keydown', function (e) {
+    if (e.key === 'Tab' && !e.shiftKey) { e.preventDefault(); b.focus(); }
+  });
+</script>
+</body>
+</html>
