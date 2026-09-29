@@ -133,7 +133,7 @@ Full reports from the same run: [examples/measured-report.md](examples/measured-
 Tests (local fixture pages on random ports, no internet):
 
 ```
-python -m pytest -q -p no:cacheprovider --import-mode=importlib C:\Users\marvin\oss-tools3\a11y-audit
+python -m pytest -q -p no:cacheprovider --import-mode=importlib a11y-audit
 26 passed in 27.39s
 ```
 
